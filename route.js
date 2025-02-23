@@ -11,7 +11,7 @@ router.get('/notes/:id', getNote)
 router.post('/notes', postNote)
 
 //DELETE API
-router.delete('/notes', deleteAllNotes)
+router.delete('/users/:user_id', deleteAllNotes)
 router.delete('/notes/:id', deleteNote)
 
 //PUT API
