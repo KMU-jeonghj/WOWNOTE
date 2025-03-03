@@ -1,15 +1,14 @@
-const db = require('mariadb')
+const mysql = require('mysql')
+const mariadb = require('mariadb')
 
-const pool = db.createPool({
+const conn = mysql.createConnection({
     host : 'localhost',
-    port : '3306',
-    user: 'root',
-    password: 'root',
-    database: "WOWNOTE"
+    user : 'root',
+    password : 'root',
+    database : 'wownote',
+    port : '33062',
+    dateStrings : true
 })
 
-async function getConnection() {
-    return pool.getConnection();
-}
 
-module.exports = {getConnection}
+module.exports = conn

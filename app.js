@@ -1,17 +1,18 @@
 const express = require('express')
 const app = express()
-const port = 8888
 
 app.use(express.json())
 
-const router = require('./route')
-app.use('/', router);  
+const userRouter = require('./routes/users')
+const noteRouter = require('./routes/notes')
+
+app.use("/", userRouter)
+app.use("/", noteRouter)
 
 
 app.listen(8888)
 
-let dbMap = new Map()
-let idCounter = 1
+
 
 
 
